@@ -12,10 +12,10 @@ The result of the comparison is available on a third end point:
 
 - <host>/v1/diff/<ID>
 
-This api implements the algorithm Needleman-Wunsch for comparing the strings.
+This api implements the [Needleman-Wunsch algorithm](https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm) for comparing the strings.
 
 
-### Running the project
+### How to run and test this project
 How to deploy the application:
 `mvn spring-boot:run`
 
@@ -25,28 +25,68 @@ How to run unit and integration tests:
 ### Calling the API
 Please refer to [Diff API Documentation](https://documenter.getpostman.com/view/7131745/S1EH42Xq) to get detailed information about calling the API.
 
-### Examples
+
+### Examples of left and right diff
 
 - Example 1:
 
 id:     1
+
 left:   ABCDE
+
 right:  ABCDE
-diff:	{equal: true} 
+
+diff:	`{"id": 1, "equal": true}`
 
 
 - Example 2:
 
-id:     1
+id:     2
+
 left:   ABCDE
+
 right:  ABCDEF
-diff:	{leftDataSize: 5, rightDataSize: 6} 
+
+diff:	`{"id": 2, "leftDataSize": 5, "rightDataSize": 6}`
 
 
--Example 3:
+- Example 3:
+
+id: 3
+
 left:   BCDYY
-right:  WWBCD
-diff:   {matches: [leftOffset: 0, rightOffset: 2, length: 3]}
+
+right:  WBCDW
+
+diff:
+```
+{
+    "id": 3,
+    "matches": [
+        {
+            "leftOffset": 0,
+            "rightOffset": 1,
+            "length": 3
+        }
+    ],
+    "leftMismatches": [
+        {
+            "charOffset": 3,
+            "length": 2
+        }
+    ],
+    "rightMismatches": [
+        {
+            "charOffset": 0,
+            "length": 1
+        },
+        {
+            "charOffset": 4,
+            "length": 1
+        }
+    ]
+}
+```
 
 
 ### Error Codes
