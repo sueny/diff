@@ -14,18 +14,18 @@ public class MatchOffset {
     @JsonIgnore
     private Long id;
     @Column
-    private Integer leftIndex;
+    private Integer leftOffset;
     @Column
-    private Integer rightIndex;
+    private Integer rightOffset;
     @Column
     private Integer length;
 
     public MatchOffset() {
     }
 
-    public MatchOffset(Integer leftIndex, Integer rightIndex, Integer length) {
-        this.leftIndex = leftIndex;
-        this.rightIndex = rightIndex;
+    public MatchOffset(Integer leftOffset, Integer rightOffset, Integer length) {
+        this.leftOffset = leftOffset;
+        this.rightOffset = rightOffset;
         this.length = length;
     }
 
@@ -37,20 +37,20 @@ public class MatchOffset {
         this.id = id;
     }
 
-    public Integer getLeftIndex() {
-        return leftIndex;
+    public Integer getLeftOffset() {
+        return leftOffset;
     }
 
-    public void setLeftIndex(Integer leftIndex) {
-        this.leftIndex = leftIndex;
+    public void setLeftOffset(Integer leftOffset) {
+        this.leftOffset = leftOffset;
     }
 
-    public Integer getRightIndex() {
-        return rightIndex;
+    public Integer getRightOffset() {
+        return rightOffset;
     }
 
-    public void setRightIndex(Integer rightIndex) {
-        this.rightIndex = rightIndex;
+    public void setRightOffset(Integer rightOffset) {
+        this.rightOffset = rightOffset;
     }
 
     public Integer getLength() {

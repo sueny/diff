@@ -14,15 +14,15 @@ public class MismatchOffset {
     @JsonIgnore
     private Long id;
     @Column
-    private Integer index;
+    private Integer charOffset;
     @Column
     private Integer length;
 
     public MismatchOffset() {
     }
 
-    public MismatchOffset(Integer index, Integer length) {
-        this.index = index;
+    public MismatchOffset(Integer charOffset, Integer length) {
+        this.charOffset = charOffset;
         this.length = length;
     }
 
@@ -34,12 +34,12 @@ public class MismatchOffset {
         this.id = id;
     }
 
-    public Integer getIndex() {
-        return index;
+    public Integer getCharOffset() {
+        return charOffset;
     }
 
-    public void setIndex(Integer index) {
-        this.index = index;
+    public void setCharOffset(Integer charOffset) {
+        this.charOffset = charOffset;
     }
 
     public Integer getLength() {

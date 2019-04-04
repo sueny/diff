@@ -100,14 +100,14 @@ public class DiffDataComparatorServiceImplTest {
         assertNull(diff.getLeftDataSize());
         assertNull(diff.getRightDataSize());
         assertEquals(1, diff.getMatches().size());
-        assertEquals(MATCH1_X - 1, diff.getMatches().get(0).getLeftIndex().intValue());
-        assertEquals(MATCH1_Y - 1, diff.getMatches().get(0).getRightIndex().intValue());
+        assertEquals(MATCH1_X - 1, diff.getMatches().get(0).getLeftOffset().intValue());
+        assertEquals(MATCH1_Y - 1, diff.getMatches().get(0).getRightOffset().intValue());
         assertEquals(MATCH1_LENGTH, diff.getMatches().get(0).getLength().intValue());
         assertEquals(1, diff.getLeftMismatches().size());
-        assertEquals(MISMATCH_S1_INDEX - 1, diff.getLeftMismatches().get(0).getIndex().intValue());
+        assertEquals(MISMATCH_S1_INDEX - 1, diff.getLeftMismatches().get(0).getCharOffset().intValue());
         assertEquals(MISMATCH_S1_LENGTH, diff.getLeftMismatches().get(0).getLength().intValue());
         assertEquals(1, diff.getRightMismatches().size());
-        assertEquals(MISMATCH_S2_INDEX - 1, diff.getRightMismatches().get(0).getIndex().intValue());
+        assertEquals(MISMATCH_S2_INDEX - 1, diff.getRightMismatches().get(0).getCharOffset().intValue());
         assertEquals(MISMATCH_S2_LENGTH, diff.getRightMismatches().get(0).getLength().intValue());
     }
 
